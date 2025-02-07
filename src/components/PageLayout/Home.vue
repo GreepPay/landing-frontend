@@ -11,7 +11,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import Hero from "../Hero/index.vue";
 import Medium from "../Mediums/index.vue";
 import Benefits from "../Benefits/index.vue";
