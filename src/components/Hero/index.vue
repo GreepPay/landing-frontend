@@ -42,7 +42,9 @@
       </div>
 
       <div>
-        <img src="../../assets/img/heroImg.png" />
+        <img
+          src="https://res.cloudinary.com/dindu/image/upload/v1738943668/official/Frame_1618868139_f6xv1r.webp"
+        />
       </div>
     </div>
     <div class="h-[108px]"></div>
