@@ -1,16 +1,16 @@
 <template>
   <section>
-    <div class="h-[240px]"></div>
+    <div class="h-[120px] xl:h-[240px]"></div>
     <div class="container">
       <h3 class="!font-bold text-base text-center text-[#C4C4C6] mb-5">
         CORE FEATURES
       </h3>
       <h2
-        class="text-[56px] font-bold text-white text-center font-dela leading-[120%]"
+        class="text-[29px] xl:text-[56px] font-bold text-white text-center font-dela leading-[120%]"
       >
         Why choose Greep<span class="text-[#32FAC8]">Pay</span>
       </h2>
-      <div class="h-[64px]"></div>
+      <div class="h-[32px] sm:h-[64px]"></div>
       <div class="mt-[64px] w-full grid grid-cols-1">
         <!-- FEATURE -->
         <div
@@ -38,7 +38,7 @@
             ref="content1"
           >
             <div class="h-4"></div>
-            <div class="grid grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div class="benefit-card">
                 <h4
                   class="text-white text-[20px] mb-4 leading-[120%] font-dela"
@@ -55,7 +55,7 @@
                 <img
                   src="https://res.cloudinary.com/dindu/image/upload/v1738839264/official/feat-3_eaatbw.webp"
                   alt=""
-                  class="translate-x-[64px] !ml-auto h-[336px]"
+                  class="translate-x-[64px] !ml-auto h-[336px] object-contain"
                 />
               </div>
               <div class="benefit-card">
@@ -73,7 +73,7 @@
                 <img
                   src="https://res.cloudinary.com/dindu/image/upload/v1738839268/official/feat-6_muvms4.webp"
                   alt=""
-                  class="translate-x-[64px] !ml-auto h-[336px]"
+                  class="translate-x-[64px] !ml-auto h-[336px] object-contain"
                 />
               </div>
             </div>
@@ -103,7 +103,7 @@
             ref="content2"
           >
             <div class="h-4"></div>
-            <div class="grid grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div class="benefit-card">
                 <h4
                   class="text-white text-[20px] mb-4 leading-[120%] font-dela"
@@ -120,7 +120,7 @@
                 <img
                   src="https://res.cloudinary.com/dindu/image/upload/v1738839264/official/feat-2_bopmda.webp"
                   alt=""
-                  class="translate-x-[64px] !ml-auto h-[336px]"
+                  class="translate-x-[64px] !ml-auto h-[336px] object-contain"
                 />
               </div>
               <div class="benefit-card">
@@ -138,7 +138,7 @@
                 <img
                   src="https://res.cloudinary.com/dindu/image/upload/v1738839265/official/feat-4_c8h4hg.webp"
                   alt=""
-                  class="translate-x-[64px] !ml-auto h-[336px]"
+                  class="translate-x-[64px] !ml-auto h-[336px] object-contain"
                 />
               </div>
             </div>
@@ -171,7 +171,7 @@
             ref="content3"
           >
             <div class="h-4"></div>
-            <div class="grid grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div class="benefit-card">
                 <h4
                   class="text-white text-[20px] mb-4 leading-[120%] font-dela"
@@ -188,7 +188,7 @@
                 <img
                   src="https://res.cloudinary.com/dindu/image/upload/v1738839263/official/feat-1_csdont.webp"
                   alt=""
-                  class="translate-x-[64px] !ml-auto h-[336px]"
+                  class="translate-x-[64px] !ml-auto h-[336px] object-contain"
                 />
               </div>
               <div class="benefit-card">
@@ -206,7 +206,7 @@
                 <img
                   src="https://res.cloudinary.com/dindu/image/upload/v1738839267/official/feat-5_dfhtkd.webp"
                   alt=""
-                  class="translate-x-[64px] !ml-auto h-[336px]"
+                  class="translate-x-[64px] !ml-auto h-[336px] object-contain"
                 />
               </div>
             </div>
@@ -236,7 +236,7 @@
             ref="content4"
           >
             <div class="h-4"></div>
-            <div class="grid grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div class="benefit-card">
                 <h4
                   class="text-white text-[20px] mb-4 leading-[120%] font-dela"
@@ -253,7 +253,7 @@
                 <img
                   src="https://res.cloudinary.com/dindu/image/upload/v1738840201/official/Pngtree_3d_realistic_gift_box_with_8649915sssss_1_exrbqm.webp"
                   alt=""
-                  class="translate-x-[64px] !ml-auto h-[336px]"
+                  class="translate-x-[64px] !ml-auto h-[336px] object-contain"
                 />
               </div>
               <div class="benefit-card">
@@ -271,14 +271,14 @@
                 <img
                   src="https://res.cloudinary.com/dindu/image/upload/v1738840201/official/Greep_Token_GRP_1_plw88o.webp"
                   alt=""
-                  class="translate-x-[64px] !ml-auto h-[336px]"
+                  class="translate-x-[64px] !ml-auto h-[336px] object-contain"
                 />
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="h-[64px]"></div>
+      <div class="h-[40px] sm:h-[64px]"></div>
       <a
         href=""
         class="text-[18px] flex items-center justify-center gap-1 text-[#32FAC8] text-center"
@@ -286,7 +286,7 @@
         <img
           src="https://res.cloudinary.com/dindu/image/upload/v1738842090/official/chevron-right_gza67b.svg"
           alt=""
-          class="h-[30px] w-[30px]"
+          class="h-[30px] w-[30px] object-contain"
       /></a>
     </div>
   </section>
@@ -335,6 +335,15 @@ const closeItem = () => {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(64px);
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .benefit-card {
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 20px 0 20px !important;
+    text-align: center;
+  }
 }
 .reveal-effect {
   transition: height 0.3s ease;

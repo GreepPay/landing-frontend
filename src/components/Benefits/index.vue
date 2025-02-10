@@ -1,14 +1,14 @@
 <template>
   <section>
-    <div class="h-[240px]"></div>
+    <div class="h-[120px] xl:h-[240px]"></div>
     <div class="container">
       <h3 class="text-base text-center text-[#C4C4C6] mb-5">KEY BENEFITS</h3>
       <h2
-        class="text-[56px] font-bold text-white text-center font-dela leading-[120%]"
+        class="text-[29px] xl:text-[56px] font-bold text-white text-center font-dela leading-[120%]"
       >
-        More <span class="text-[#32FAC8]"> Value </span> to your business,
+        More <span class="text-[#32FAC8]"> Value </span> To your business,
       </h2>
-      <div class="h-[64px]"></div>
+      <div class="h-[32px] sm:h-[64px]"></div>
       <div
         class="mt-[64px] w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
       >
@@ -25,7 +25,7 @@
           </div>
         </div>
       </div>
-      <div class="h-[64px]"></div>
+      <div class="h-[40px] sm:h-[64px]"></div>
       <a href="" class="text-[18px] block text-[#32FAC8] text-center"
         >Join our Waitlist</a
       >
@@ -73,12 +73,18 @@ const benefits = ref([
 <style scoped>
 .benefit-card {
   display: flex;
-  padding: 48px 64px;
+  padding: 48px 64px !important;
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(64px);
+}
+
+@media (max-width: 768px) {
+  .benefit-card {
+    padding: 32px 20px !important;
+  }
 }
 </style>

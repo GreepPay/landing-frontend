@@ -1,14 +1,14 @@
 <template>
   <section>
-    <div class="h-[240px]"></div>
+    <div class="h-[120px] xl:h-[240px]"></div>
     <div class="container">
-      <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div class="grid gap-6">
           <div class="contact-card">
             <h3 class="text-base text-[#C4C4C6] mb-5">KEY BENEFITS</h3>
             <div class="h-[20px]"></div>
             <h2
-              class="text-[56px] font-bold text-white font-dela leading-[120%]"
+              class="text-[29px] xl:text-[56px] font-bold text-white font-dela leading-[120%]"
             >
               Make <span class="text-[#32FAC8]"> Inquiries </span>
             </h2>
@@ -41,14 +41,22 @@
                   class="h-[28px] w-[28px]"
                 />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.instagram.com/greeppay/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img
                   src="https://res.cloudinary.com/dindu/image/upload/v1738831132/official/Insta_rjowen.svg"
                   alt="Instagram"
                   class="h-[28px] w-[28px]"
                 />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://x.com/Greeppay"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img
                   src="https://res.cloudinary.com/dindu/image/upload/v1738831132/official/ExTweet_tj3iya.svg"
                   alt="Twitter"
@@ -64,7 +72,7 @@
         </div>
         <div class="contact-card">
           <form>
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-4">
               <div>
                 <label
                   class="text-[16px] leading-[24px] text-[#C4C4C6]"
@@ -175,6 +183,7 @@ import { ref } from "vue";
   backdrop-filter: blur(64px);
   padding: 12px 20px;
   overflow: hidden;
+  width: 100%;
   color: #8c8c93;
   font-family: Inter;
   font-size: 18px;
@@ -189,5 +198,12 @@ import { ref } from "vue";
   background: #32fac8;
   padding: 16px 22px;
   box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+}
+
+@media (max-width: 768px) {
+  .contact-card {
+    padding: 24px !important;
+    text-align: left;
+  }
 }
 </style>

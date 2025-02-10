@@ -1,7 +1,9 @@
 <template>
   <footer>
-    <div class="h-[280px]"></div>
-    <div class="container max-w-[1200px] w-full flex justify-between gap-6">
+    <div class="h-[120px] xl:h-[240px]"></div>
+    <div
+      class="container max-w-[1200px] w-full flex flex-col lg:flex-row justify-between gap-6"
+    >
       <div class="max-w-[342px]">
         <div class="flex items-center gap-3">
           <img

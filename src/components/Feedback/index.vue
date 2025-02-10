@@ -1,14 +1,14 @@
 <template>
   <section>
-    <div class="h-[240px]"></div>
+    <div class="h-[120px] xl:h-[240px]"></div>
     <div class="container">
       <h3 class="text-base text-center text-[#C4C4C6] mb-5">FEEDBACK</h3>
       <h2
-        class="text-[56px] font-bold text-white text-center font-dela leading-[120%]"
+        class="text-[29px] xl:text-[56px] font-bold text-white text-center font-dela leading-[120%]"
       >
         The <span class="text-[#32FAC8]"> Buzz </span> from waitlisters
       </h2>
-      <div class="h-[64px]"></div>
+      <div class="h-[32px] sm:h-[64px]"></div>
       <div class="relative">
         <button
           class="absolute top-[50%] left-0 translate-y-[-50%] z-30 cursor-pointer"
@@ -51,14 +51,14 @@
           >
             <img
               src="https://res.cloudinary.com/dindu/image/upload/v1738827197/official/w21uvhts2jkejo0elbyj.svg"
-              class="h-10 w-12"
+              class="h-7 w-7 md:h-10 md:w-12"
               alt=""
             />
             <div class="h-[48px]"></div>
             <p class="text-[18px] italic text-white leading-[28px]">
               {{ feedback.description }}
             </p>
-            <div class="h-[64px]"></div>
+            <div class="h-[32px] sm:h-[64px]"></div>
             <div class="flex gap-6">
               <img
                 :src="feedback.avatar"
@@ -78,7 +78,7 @@
         </swiper>
       </div>
 
-      <div class="h-[64px]"></div>
+      <div class="h-[40px] sm:h-[64px]"></div>
       <a href="" class="text-[18px] block text-[#32FAC8] text-center"
         >Choose now</a
       >
@@ -179,6 +179,14 @@ export default {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(64px);
 }
+@media (max-width: 768px) {
+  .feedback-card {
+    padding: 20px !important;
+    min-height: auto;
+    margin: 30px;
+  }
+}
+
 .mySwiper {
   position: relative;
 }
