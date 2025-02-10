@@ -9,9 +9,10 @@
         <a
           v-for="(item, idx) in navItems"
           :key="idx"
+          :href="`#${item.id}`"
           class="text-[#C4C4C6] text-base cursor-pointer"
         >
-          {{ item }}
+          {{ item.text }}
         </a>
       </div>
     </div>
@@ -33,13 +34,34 @@
 import { ref } from "vue";
 
 const navItems = ref([
-  "Home",
-  "Mediums",
-  "Benefits",
-  "Features",
-  "How it works",
-  "Feedback",
-  "Contact",
+  {
+    text: "Home",
+    id: "hero",
+  },
+  {
+    text: "Mediums",
+    id: "medium",
+  },
+  {
+    text: "Benefits",
+    id: "benefits",
+  },
+  {
+    text: "Features",
+    id: "reasons",
+  },
+  {
+    text: "How it works",
+    id: "works",
+  },
+  {
+    text: "Feedback",
+    id: "feedback",
+  },
+  {
+    text: "Contact",
+    id: "contact",
+  },
 ]);
 </script>
 

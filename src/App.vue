@@ -5,7 +5,7 @@ import TopBar from "./components/TopBar/index.vue";
 
 <template>
   <div class="!w-100vw relative">
-    <div class="!px-6 !z-[1000] sticky top-6">
+    <div class="!px-4 !sm:px-6 !z-[1000] sticky top-6">
       <TopBar class="top-4 w-full" />
     </div>
     <RouterView />

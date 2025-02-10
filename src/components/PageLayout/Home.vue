@@ -1,13 +1,13 @@
 <template>
   <div class="w-full">
-    <Hero />
-    <Medium />
-    <Benefits />
-    <Reasons />
-    <Works />
-    <Feedback />
-    <Contact />
-    <Footer />
+    <Hero id="hero" />
+    <Medium id="medium" />
+    <Benefits id="benefits" />
+    <Reasons id="reasons" />
+    <Works id="works" />
+    <Feedback id="feedback" />
+    <Contact id="contact" />
+    <Footer id="footer" />
   </div>
 </template>
 
