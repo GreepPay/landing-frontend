@@ -190,7 +190,7 @@
   </section>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { ref, onMounted } from "vue";
 
 const formEle = ref();
@@ -217,7 +217,7 @@ async function handleSubmit(event) {
           position: toast.POSITION.TOP_RIGHT,
           transition: "slide",
           hideProgressBar: true,
-        } as ToastOptions);
+        });
 
         formEle.value.reset();
       } else {
@@ -229,7 +229,7 @@ async function handleSubmit(event) {
               position: toast.POSITION.TOP_RIGHT,
               transition: "slide",
               hideProgressBar: true,
-            } as ToastOptions);
+            });
           } else {
             toast("Oops! There was a problem submitting your form", {
               type: "error",
@@ -237,7 +237,7 @@ async function handleSubmit(event) {
               position: toast.POSITION.TOP_RIGHT,
               transition: "slide",
               hideProgressBar: true,
-            } as ToastOptions);
+            });
           }
         });
       }
@@ -248,7 +248,7 @@ async function handleSubmit(event) {
         autoClose: 1000,
         position: toast.POSITION.TOP_RIGHT,
         transition: "slide",
-      } as ToastOptions);
+      });
     })
     .finally(() => {
       loading.value = false;
