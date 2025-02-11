@@ -195,7 +195,7 @@ import { ref, onMounted } from "vue";
 
 const formEle = ref();
 
-import { toast, type ToastOptions } from "vue3-toastify";
+import { toast } from "vue3-toastify";
 const loading = ref(false);
 
 async function handleSubmit(event) {
