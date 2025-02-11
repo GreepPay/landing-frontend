@@ -30,7 +30,7 @@ body::before {
   position: absolute;
   height: 100%;
   width: 64px;
-  left: -284px;
+  left: -324px;
   top: 0;
   z-index: 1;
 }
@@ -42,7 +42,7 @@ body::after {
   position: absolute;
   height: 100%;
   width: 64px;
-  right: -264px;
+  right: -294px;
   z-index: 1;
   top: 0;
 }
@@ -80,4 +80,12 @@ body::after {
 
 .slide-up-leave-to {
   transform: translateY(25px);
+}
+@media (max-width: 768px) {
+  body::before {
+    display: none;
+  }
+  body::after {
+    display: none;
+  }
 }

@@ -60,9 +60,15 @@
         </div>
       </div>
       <div class="h-[40px] sm:h-[64px]"></div>
-      <a href="" class="text-[18px] block text-[#32FAC8] text-center"
-        >Choose now</a
-      >
+      <a
+        href=""
+        class="text-[18px] flex items-center justify-center gap-1 text-[#32FAC8] text-center"
+        >Choose now
+        <img
+          src="https://res.cloudinary.com/dindu/image/upload/v1738842090/official/chevron-right_gza67b.svg"
+          alt=""
+          class="h-[30px] w-[30px] object-contain"
+      /></a>
     </div>
   </section>
 </template>
