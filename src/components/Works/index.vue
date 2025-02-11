@@ -2,7 +2,9 @@
   <section>
     <div class="h-[120px] xl:h-[240px]"></div>
     <div class="container">
-      <h3 class="text-base text-center text-[#C4C4C6] mb-5">HOW IT WORKS</h3>
+      <h3 class="text-[12px] sm:text-base text-center text-[#C4C4C6] mb-5">
+        HOW IT WORKS
+      </h3>
       <h2
         class="text-[29px] xl:text-[56px] font-bold text-white text-center font-dela leading-[120%]"
       >
@@ -13,19 +15,21 @@
         <div class="work-card">
           <div class="rounded-full number-bg flex items-center justify-center">
             <h3
-              class="text-white text-[22px] xl:text-[28px] mb-4 leading-[120%] font-dela p-[32px]"
+              class="text-white text-[22px] sm:text-[28px] mb-4 leading-[120%] font-dela p-[32px]"
             >
               1
             </h3>
           </div>
           <div>
             <h4
-              class="text-white text-[22px] xl:text-[28px] mb-4 leading-[120%] font-dela"
+              class="text-white text-[22px] sm:text-[28px] mb-4 leading-[120%] font-dela"
             >
               Join Our <span class="text-[#32FAC8]">Waitlist</span>
             </h4>
             <div class="h-4"></div>
-            <p class="text-[18px] text-[#C4C4C6] leading-[28px]">
+            <p
+              class="text-[16px] sm:text-[18px] text-[#C4C4C6] leading-[24px] sm:leading-[28px]"
+            >
               Start by joining our waitlist to gain early access to the future
               of payments.
             </p>
@@ -34,20 +38,22 @@
         <div class="work-card">
           <div class="rounded-full number-bg flex items-center justify-center">
             <h3
-              class="text-white text-[22px] xl:text-[28px] mb-4 leading-[120%] font-dela p-[32px]"
+              class="text-white text-[22px] sm:text-[28px] mb-4 leading-[120%] font-dela p-[32px]"
             >
               2
             </h3>
           </div>
           <div>
             <h4
-              class="text-white text-[22px] xl:text-[28px] mb-4 leading-[120%] font-dela"
+              class="text-white text-[22px] sm:text-[28px] mb-4 leading-[120%] font-dela"
             >
               Get Product Launch
               <span class="text-[#32FAC8]">Notification</span>
             </h4>
             <div class="h-4"></div>
-            <p class="text-[18px] text-[#C4C4C6] leading-[28px]">
+            <p
+              class="text-[16px] sm:text-[18px] text-[#C4C4C6] leading-[24px] sm:leading-[28px]"
+            >
               Get notification text/email for the full or beta-product launch.
             </p>
           </div>
@@ -55,20 +61,22 @@
         <div class="work-card">
           <div class="rounded-full number-bg flex items-center justify-center">
             <h3
-              class="text-white text-[22px] xl:text-[28px] mb-4 leading-[120%] font-dela p-[32px]"
+              class="text-white text-[22px] sm:text-[28px] mb-4 leading-[120%] font-dela p-[32px]"
             >
               3
             </h3>
           </div>
           <div>
             <h4
-              class="text-white text-[22px] xl:text-[28px] mb-4 leading-[120%] font-dela"
+              class="text-white text-[22px] sm:text-[28px] mb-4 leading-[120%] font-dela"
             >
               Choose <span class="text-[#32FAC8]">Hard</span> POS or
               <span class="text-[#32FAC8]">Soft</span> POS
             </h4>
             <div class="h-4"></div>
-            <p class="text-[18px] text-[#C4C4C6] leading-[28px]">
+            <p
+              class="text-[16px] sm:text-[18px] text-[#C4C4C6] leading-[24px] sm:leading-[28px]"
+            >
               Get the Hard POS delivered to you for a fee or download the Soft
               POS for free.
             </p>
@@ -77,17 +85,21 @@
         <div class="work-card">
           <div class="rounded-full number-bg flex items-center justify-center">
             <h3
-              class="text-white text-[22px] xl:text-[28px] mb-4 leading-[120%] font-dela p-[32px]"
+              class="text-white text-[22px] sm:text-[28px] mb-4 leading-[120%] font-dela p-[32px]"
             >
               4
             </h3>
           </div>
           <div>
-            <h4 class="text-white text-[28px] mb-4 leading-[120%] font-dela">
+            <h4
+              class="text-white text-[22px] sm:text-[28px] mb-4 leading-[120%] font-dela"
+            >
               You’re in <span class="text-[#32FAC8]">business</span>
             </h4>
             <div class="h-4"></div>
-            <p class="text-[18px] text-[#C4C4C6] leading-[28px]">
+            <p
+              class="text-[16px] sm:text-[18px] text-[#C4C4C6] leading-[24px] sm:leading-[28px]"
+            >
               Receive, send, and manage payments; access real-time insights and
               detailed reports of all transactions and rewards.
             </p>

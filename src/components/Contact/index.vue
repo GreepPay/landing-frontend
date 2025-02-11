@@ -5,33 +5,45 @@
       <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div class="grid gap-6">
           <div class="contact-card">
-            <h3 class="text-base text-[#C4C4C6] mb-5">KEY BENEFITS</h3>
-            <div class="h-[20px]"></div>
+            <h3 class="text-[12px] sm:text-base text-[#C4C4C6] mb-5">
+              CONTACT US
+            </h3>
+            <div class="h-[12px] sm:h-[20px]"></div>
             <h2
               class="text-[29px] xl:text-[56px] font-bold text-white font-dela leading-[120%]"
             >
               Make <span class="text-[#32FAC8]"> Inquiries </span>
             </h2>
-            <div class="h-[32px]"></div>
-            <p class="text-[18px] text-[#C4C4C6] leading-[28px]">
+            <div class="h-[20px] sm:h-[32px]"></div>
+            <p
+              class="text-[16px] sm:text-[18px] text-[#C4C4C6] leading-[24px] sm:leading-[28px]"
+            >
               Want to get in touch? Use the form, or click the icons below. We
               aim to get back to all inquiries within 24 hours, looking forward
               to hearing from you.
             </p>
-            <div class="h-[32px]"></div>
+            <div class="h-[20px] sm:h-[32px]"></div>
             <div class="flex items-center gap-6">
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.linkedin.com/showcase/greep-pay/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img
-                  src="https://res.cloudinary.com/dindu/image/upload/v1738830953/official/call_j6pfjz.svg"
-                  alt="Call Us"
-                  class="h-[28px] w-[28px]"
+                  src="https://res.cloudinary.com/dindu/image/upload/v1739256596/line-md_linkedin_gcpfh3.svg"
+                  alt="Linkedin"
+                  class="h-[28px] opacity-[80%] w-[28px]"
                 />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://res.cloudinary.com/dindu/image/upload/v1739256596/mingcute_tiktok-fill_fbgpcn.svg"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img
-                  src="https://res.cloudinary.com/dindu/image/upload/v1738831058/official/sms_rgf35w.svg"
+                  src="https://res.cloudinary.com/dindu/image/upload/v1739256596/mingcute_tiktok-fill_fbgpcn.svg"
                   alt=""
-                  class="h-[28px] w-[28px]"
+                  class="h-[28px] opacity-[80%] w-[28px]"
                 />
               </a>
               <a href="#" target="_blank" rel="noopener noreferrer">
@@ -71,8 +83,12 @@
           />
         </div>
         <div class="contact-card">
-          <form>
-            <div class="grid grid-cols-1 xl:grid-cols-2 gap-4">
+          <form
+            id="my-form"
+            action="https://formspree.io/f/xvgzbzde"
+            method="POST"
+          >
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-4">
               <div>
                 <label
                   class="text-[16px] leading-[24px] text-[#C4C4C6]"
@@ -105,7 +121,7 @@
               </div>
             </div>
             <div class="h-[20px]"></div>
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid sm:grid-cols-2 gap-5 sm:gap-4">
               <div>
                 <label
                   class="text-[16px] leading-[24px] text-[#C4C4C6]"
@@ -154,9 +170,17 @@
               ></textarea>
               <div class="h-[48px]"></div>
               <button
-                class="text-[#07070E] w-full text-[18px] leading-[28px] action-btn"
+                id="my-form-button"
+                class="text-[#07070E] cursor-pointer flex items-center justify-center font-semibold w-full text-[18px] leading-[28px] action-btn"
+                :disabled="loading"
               >
-                Submit
+                <img
+                  v-if="loading"
+                  class="animate-spin h-5 w-5 invert !my-1"
+                  src="https://res.cloudinary.com/dindu/image/upload/v1739259354/icon-park_loading-four_wmiqvu.svg"
+                  alt=""
+                />
+                <span v-else class="!font-semibold"> Submit</span>
               </button>
             </div>
           </form>
@@ -167,7 +191,75 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
+
+const formEle = ref();
+
+import { toast, type ToastOptions } from "vue3-toastify";
+const loading = ref(false);
+
+async function handleSubmit(event) {
+  event.preventDefault();
+  loading.value = true;
+  var data = new FormData(event.target);
+  fetch(event.target.action, {
+    method: formEle.value.method,
+    body: data,
+    headers: {
+      Accept: "application/json",
+    },
+  })
+    .then((response) => {
+      if (response.ok) {
+        toast("Thanks for your submission!", {
+          type: "success",
+          autoClose: 1000,
+          position: toast.POSITION.TOP_RIGHT,
+          transition: "slide",
+          hideProgressBar: true,
+        } as ToastOptions);
+
+        formEle.value.reset();
+      } else {
+        response.json().then((data) => {
+          if (Object.hasOwn(data, "errors")) {
+            toast(data["errors"].map((error) => error["message"]).join(", "), {
+              type: "error",
+              autoClose: 1000,
+              position: toast.POSITION.TOP_RIGHT,
+              transition: "slide",
+              hideProgressBar: true,
+            } as ToastOptions);
+          } else {
+            toast("Oops! There was a problem submitting your form", {
+              type: "error",
+              autoClose: 1000,
+              position: toast.POSITION.TOP_RIGHT,
+              transition: "slide",
+              hideProgressBar: true,
+            } as ToastOptions);
+          }
+        });
+      }
+    })
+    .catch((error) => {
+      toast("Oops! There was a problem submitting your form", {
+        type: "error",
+        autoClose: 1000,
+        position: toast.POSITION.TOP_RIGHT,
+        transition: "slide",
+      } as ToastOptions);
+    })
+    .finally(() => {
+      loading.value = false;
+    });
+}
+
+onMounted(() => {
+  const form = document.getElementById("my-form");
+  formEle.value = form;
+  form.addEventListener("submit", handleSubmit);
+});
 </script>
 
 <style scoped>
@@ -197,12 +289,13 @@ import { ref } from "vue";
   border: 1px solid #32fac8;
   background: #32fac8;
   padding: 16px 22px;
+  font-weight: 600;
   box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
 }
 
 @media (max-width: 768px) {
   .contact-card {
-    padding: 24px !important;
+    padding: 32px 20px;
     text-align: left;
   }
 }

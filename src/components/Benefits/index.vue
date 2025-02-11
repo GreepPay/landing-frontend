@@ -2,7 +2,9 @@
   <section>
     <div class="h-[120px] xl:h-[240px]"></div>
     <div class="container">
-      <h3 class="text-base text-center text-[#C4C4C6] mb-5">KEY BENEFITS</h3>
+      <h3 class="text-[12px] sm:text-base text-center text-[#C4C4C6] mb-5">
+        KEY BENEFITS
+      </h3>
       <h2
         class="text-[29px] xl:text-[56px] font-bold text-white text-center font-dela leading-[120%]"
       >
@@ -19,7 +21,9 @@
               {{ benefit.subTitle }}
             </h4>
             <div class="h-4"></div>
-            <p class="text-[18px] text-[#C4C4C6] leading-[28px]">
+            <p
+              class="text-[16px] sm:text-[18px] text-[#C4C4C6] leading-[24px] sm:leading-[28px]"
+            >
               {{ benefit.description }}
             </p>
           </div>
@@ -43,29 +47,32 @@ const benefits = ref([
     description: "Get started in minutes without any hassle or downtime.",
   },
   {
-    title: "Instant",
-    subTitle: "Setup",
-    description: "Get started in minutes without any hassle or downtime.",
+    title: "Fast",
+    subTitle: " & Reliable",
+    description:
+      "Efficient and effortless payment process with no complications.",
   },
   {
-    title: "Instant",
-    subTitle: "Setup",
-    description: "Get started in minutes without any hassle or downtime.",
+    title: "Trusted ",
+    subTitle: "Security",
+    description: "Safety prioritized with industry leading security measures.",
   },
   {
-    title: "Instant",
-    subTitle: "Setup",
-    description: "Get started in minutes without any hassle or downtime.",
+    title: "Affordable",
+    subTitle: "Fees",
+    description: "A good deal on transaction rates mean more profits for you.",
   },
   {
-    title: "Instant",
-    subTitle: "Setup",
-    description: "Get started in minutes without any hassle or downtime.",
+    title: "Borderless",
+    subTitle: "Deals",
+    description:
+      "Global transactions; no complex money conversions or hidden fees.",
   },
   {
-    title: "Instant",
-    subTitle: "Setup",
-    description: "Get started in minutes without any hassle or downtime.",
+    title: "24/7 ",
+    subTitle: "Support",
+    description:
+      "Customer satisfaction guaranteed with personalized communication.",
   },
 ]);
 </script>

@@ -2,7 +2,9 @@
   <section>
     <div class="hidden xl:block h-[144px]"></div>
     <div class="container">
-      <h3 class="text-base text-center text-[#C4C4C6] mb-5">OUR MEDIUMS</h3>
+      <h3 class="text-[12px] sm:text-base text-center text-[#C4C4C6] mb-5">
+        OUR MEDIUMS
+      </h3>
       <h2
         class="!text-[29px] xl:text-[56px] font-bold text-white text-center font-dela leading-[34.8px] xl:leading-[120%]"
       >
@@ -20,7 +22,9 @@
               <span class="text-[#32FAC8]">Hard</span> POS | Terminal
             </h4>
             <div class="h-4"></div>
-            <p class="text-base xl:text-[18px] text-[#C4C4C6] leading-[28px]">
+            <p
+              class="text-base xl:text-[16px] sm:text-[18px] text-[#C4C4C6] leading-[24px] sm:leading-[28px]"
+            >
               A sleek, dedicated device for businesses that need high volume or
               in-store payment solutions.
             </p>
@@ -40,7 +44,9 @@
               <span class="text-[#32FAC8]">Hard</span> POS | Terminal
             </h4>
             <div class="h-4"></div>
-            <p class="text-base xl:text-[18px] text-[#C4C4C6] leading-[28px]">
+            <p
+              class="text-base xl:text-[16px] sm:text-[18px] text-[#C4C4C6] leading-[24px] sm:leading-[28px]"
+            >
               A sleek, dedicated device for businesses that need high volume or
               in-store payment solutions.
             </p>

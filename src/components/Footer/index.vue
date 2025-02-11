@@ -124,4 +124,11 @@ const companyLinks = ref([
   padding: 2px 0px 6px 36px;
   margin-left: 36px;
 }
+@media (max-width: 768px) {
+  .footer-description {
+    border-left: 2.5px solid #32fac8;
+    padding: 2px 0px 6px 36px;
+    margin-left: 26px;
+  }
+}
 </style>

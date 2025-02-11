@@ -15,6 +15,8 @@ body {
   font-family: "Inter", sans-serif;
   position: relative;
   scroll-behavior: smooth;
+  width: 100vw;
+  overflow-x: hidden;
 }
 html {
   scroll-behavior: smooth;
@@ -64,4 +66,18 @@ body::after {
   max-width: 1360px;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.25s ease-out;
+}
+
+.slide-up-enter-from {
+  opacity: 0;
+  transform: translateY(-25px);
+}
+
+.slide-up-leave-to {
+  transform: translateY(25px);
 }
