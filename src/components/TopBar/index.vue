@@ -22,7 +22,7 @@
     >
       Get Started
     </button>
-    <div class="relative sm:hidden overflow-hidden ml-auto !h-6 !w-6">
+    <div class="relative xl:hidden overflow-hidden ml-auto !h-6 !w-6">
       <Transition name="slide-up">
         <img
           v-if="!showNavigation"
