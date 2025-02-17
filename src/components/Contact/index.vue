@@ -85,7 +85,7 @@
         <div class="contact-card">
           <form
             id="my-form"
-            action="https://formspree.io/f/xvgzbzde"
+            action="https://formspree.io/f/mkgopzgo"
             method="POST"
           >
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-4">
