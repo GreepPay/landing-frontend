@@ -1,0 +1,54 @@
+name: Deploy to Staging and Production
+
+on:
+  push:
+    branches:
+      - dev
+      - prod
+
+jobs:
+  deploy-staging:
+    if: github.ref == 'refs/heads/dev'
+    name: Deploy to Staging
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: "${{ secrets.SSH_HOST }}"
+          username: "${{ secrets.SSH_USER }}"
+          key: "${{ secrets.SSH_PRIVATE_KEY }}"
+          script: |
+            cd ~/ShptAppConfigs/shpt-admin-api
+            earthly --no-cache +setup --envs=${{ github.ref_name }}
+            az acr login --name ${{ secrets.AZURE_REGISTRY_NAME }}
+            earthly --push +build --envs=${{ github.ref_name }} --version=${{ github.run_number }}
+            export $(env | grep -E 'GITHUB|AZURE|SSH|CRD|DOCKER' | xargs) && \
+            earthly --no-cache +deploy --envs=${{ github.ref_name }} --version=${{ github.run_number }}
+
+  deploy-production:
+    if: github.ref == 'refs/heads/prod'
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: "${{ secrets.SSH_HOST }}"
+          username: "${{ secrets.SSH_USER }}"
+          key: "${{ secrets.SSH_PRIVATE_KEY }}"
+          script: |
+            cd ~/ShptAppConfigs/shpt-admin-api
+            earthly --no-cache +setup --envs=${{ github.ref_name }}
+            az acr login --name ${{ secrets.AZURE_REGISTRY_NAME }}
+            earthly --push +build --envs=${{ github.ref_name }} --version=${{ github.run_number }}
+            export $(env | grep -E 'GITHUB|AZURE|SSH|CRD|DOCKER' | xargs) && \
+            earthly --no-cache +deploy --envs=${{ github.ref_name }} --version=${{ github.run_number }}
