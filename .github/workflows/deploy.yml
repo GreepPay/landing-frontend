@@ -24,11 +24,15 @@ jobs:
           key: "${{ secrets.SSH_PRIVATE_KEY }}"
           script: |
             cd ~/GreepAppConfigs/greep-homepage
+            # Collect environment variables and secrets dynamically and build EARTHLY_BUILD_ARGS
+            export EARTHLY_BUILD_ARGS=$(env | grep -E 'GITHUB|AZURE|SSH|CRD|DOCKER' | \
+                awk -F= '{print $1"="$2}' | paste -sd, -)
+            # Optionally, you can add any custom variables you want to include
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}"
             earthly --no-cache +setup --envs=${{ github.ref_name }}
             az acr login --name ${{ secrets.AZURE_REGISTRY_NAME }}
-            earthly --push +build --envs=${{ github.ref_name }} --version=${{ github.run_number }}
-            export $(env | grep -E 'GITHUB|AZURE|SSH|CRD|DOCKER' | xargs) && \
-            earthly --no-cache +deploy --envs=${{ github.ref_name }} --version=${{ github.run_number }}
+            earthly --push +build --envs=${{ github.ref_name }} --version=${{ github.run_number }} --service="greep-homepage" --apptype="nodejs"
+            earthly --no-cache +deploy --envs=${{ github.ref_name }} --version=${{ github.run_number }} --service="greep-homepage" --apptype="nodejs"
 
   deploy-production:
     if: github.ref == 'refs/heads/prod'
@@ -47,8 +51,12 @@ jobs:
           key: "${{ secrets.SSH_PRIVATE_KEY }}"
           script: |
             cd ~/GreepAppConfigs/greep-homepage
+            # Collect environment variables and secrets dynamically and build EARTHLY_BUILD_ARGS
+            export EARTHLY_BUILD_ARGS=$(env | grep -E 'GITHUB|AZURE|SSH|CRD|DOCKER' | \
+                awk -F= '{print $1"="$2}' | paste -sd, -)
+            # Optionally, you can add any custom variables you want to include
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}"
             earthly --no-cache +setup --envs=${{ github.ref_name }}
             az acr login --name ${{ secrets.AZURE_REGISTRY_NAME }}
-            earthly --push +build --envs=${{ github.ref_name }} --version=${{ github.run_number }}
-            export $(env | grep -E 'GITHUB|AZURE|SSH|CRD|DOCKER' | xargs) && \
-            earthly --no-cache +deploy --envs=${{ github.ref_name }} --version=${{ github.run_number }}
+            earthly --push +build --envs=${{ github.ref_name }} --version=${{ github.run_number }} --service="greep-homepage" --apptype="nodejs"
+            earthly --no-cache +deploy --envs=${{ github.ref_name }} --version=${{ github.run_number }} --service="greep-homepage" --apptype="nodejs"
