@@ -23,7 +23,7 @@ jobs:
           username: "${{ secrets.SSH_USER }}"
           key: "${{ secrets.SSH_PRIVATE_KEY }}"
           script: |
-            cd ~/ShptAppConfigs/shpt-admin-api
+            cd ~/GreepAppConfigs/greep-homepage
             earthly --no-cache +setup --envs=${{ github.ref_name }}
             az acr login --name ${{ secrets.AZURE_REGISTRY_NAME }}
             earthly --push +build --envs=${{ github.ref_name }} --version=${{ github.run_number }}
@@ -46,7 +46,7 @@ jobs:
           username: "${{ secrets.SSH_USER }}"
           key: "${{ secrets.SSH_PRIVATE_KEY }}"
           script: |
-            cd ~/ShptAppConfigs/shpt-admin-api
+            cd ~/GreepAppConfigs/greep-homepage
             earthly --no-cache +setup --envs=${{ github.ref_name }}
             az acr login --name ${{ secrets.AZURE_REGISTRY_NAME }}
             earthly --push +build --envs=${{ github.ref_name }} --version=${{ github.run_number }}
