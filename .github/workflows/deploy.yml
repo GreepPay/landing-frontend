@@ -41,10 +41,10 @@ jobs:
             export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}SSH_USER=${{ secrets.SSH_USER }},"
 
             # Add general variables to EARTHLY_BUILD_ARGS
-            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}CRD_CONTROLLER_NAME=${{ variables.CRD_CONTROLLER_NAME }},"
-            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}CRD_GROUP=${{ variables.CRD_GROUP }},"
-            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}CRD_KIND=${{ variables.CRD_KIND }},"
-            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}DOCKER_REGISTRY=${{ variables.DOCKER_REGISTRY }}"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}CRD_CONTROLLER_NAME=${{ env.CRD_CONTROLLER_NAME }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}CRD_GROUP=${{ env.CRD_GROUP }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}CRD_KIND=${{ env.CRD_KIND }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}DOCKER_REGISTRY=${{ env.DOCKER_REGISTRY }}"
 
             # Remove trailing comma (if any)
             export EARTHLY_BUILD_ARGS=$(echo $EARTHLY_BUILD_ARGS | sed 's/,$//')
@@ -91,10 +91,10 @@ jobs:
             export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}SSH_USER=${{ secrets.SSH_USER }},"
 
             # Add general variables to EARTHLY_BUILD_ARGS
-            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}CRD_CONTROLLER_NAME=${{ variables.CRD_CONTROLLER_NAME }},"
-            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}CRD_GROUP=${{ variables.CRD_GROUP }},"
-            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}CRD_KIND=${{ variables.CRD_KIND }},"
-            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}DOCKER_REGISTRY=${{ variables.DOCKER_REGISTRY }}"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}CRD_CONTROLLER_NAME=${{ env.CRD_CONTROLLER_NAME }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}CRD_GROUP=${{ env.CRD_GROUP }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}CRD_KIND=${{ env.CRD_KIND }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}DOCKER_REGISTRY=${{ env.DOCKER_REGISTRY }}"
 
             # Remove trailing comma (if any)
             export EARTHLY_BUILD_ARGS=$(echo $EARTHLY_BUILD_ARGS | sed 's/,$//')
