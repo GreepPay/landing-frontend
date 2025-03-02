@@ -24,15 +24,38 @@ jobs:
           key: "${{ secrets.SSH_PRIVATE_KEY }}"
           script: |
             cd ~/GreepAppConfigs/greep-homepage
-            # Collect environment variables and secrets dynamically and build EARTHLY_BUILD_ARGS
-            export EARTHLY_BUILD_ARGS=$(env | grep -E 'GITHUB|AZURE|SSH|CRD|DOCKER' | \
-                awk -F= '{print $1"="$2}' | paste -sd, -)
-            # Optionally, you can add any custom variables you want to include
-            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}"
-            earthly --no-cache +setup --envs=${{ github.ref_name }}
+
+            # Collect secrets into EARTHLY_BUILD_ARGS
+            export EARTHLY_BUILD_ARGS=""
+
+            # Add secret environment variables to EARTHLY_BUILD_ARGS
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}AZURE_CLIENT_ID=${{ secrets.AZURE_CLIENT_ID }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}AZURE_CLIENT_SECRET=${{ secrets.AZURE_CLIENT_SECRET }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}AZURE_KUBERNETES_CLUSTER_NAME=${{ secrets.AZURE_KUBERNETES_CLUSTER_NAME }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}AZURE_REGISTRY_NAME=${{ secrets.AZURE_REGISTRY_NAME }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}AZURE_RESOURCE_GROUP=${{ secrets.AZURE_RESOURCE_GROUP }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}AZURE_SUBSCRIPTION_ID=${{ secrets.AZURE_SUBSCRIPTION_ID }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}AZURE_TENANT_ID=${{ secrets.AZURE_TENANT_ID }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}SSH_HOST=${{ secrets.SSH_HOST }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}SSH_PRIVATE_KEY=${{ secrets.SSH_PRIVATE_KEY }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}SSH_USER=${{ secrets.SSH_USER }},"
+
+            # Add general variables to EARTHLY_BUILD_ARGS
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}CRD_CONTROLLER_NAME=${{ variables.CRD_CONTROLLER_NAME }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}CRD_GROUP=${{ variables.CRD_GROUP }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}CRD_KIND=${{ variables.CRD_KIND }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}DOCKER_REGISTRY=${{ variables.DOCKER_REGISTRY }}"
+
+            # Remove trailing comma (if any)
+            export EARTHLY_BUILD_ARGS=$(echo $EARTHLY_BUILD_ARGS | sed 's/,$//')
+
+            # Run earthly with the dynamically created EARTHLY_BUILD_ARGS
+            earthly --no-cache +setup --envs=${{ github.ref_name }} ${EARTHLY_BUILD_ARGS}
             az acr login --name ${{ secrets.AZURE_REGISTRY_NAME }}
-            earthly --push +build --envs=${{ github.ref_name }} --version=${{ github.run_number }} --service="greep-homepage" --apptype="nodejs"
-            earthly --no-cache +deploy --envs=${{ github.ref_name }} --version=${{ github.run_number }} --service="greep-homepage" --apptype="nodejs"
+            earthly --push +build --envs=${{ github.ref_name }} --version=${{ github.run_number }} --service="greep-homepage" --apptype="nodejs" ${EARTHLY_BUILD_ARGS}
+
+            # Deploy using the EARTHLY_BUILD_ARGS
+            earthly --no-cache +deploy --envs=${{ github.ref_name }} --version=${{ github.run_number }} --service="greep-homepage" --apptype="nodejs" ${EARTHLY_BUILD_ARGS}
 
   deploy-production:
     if: github.ref == 'refs/heads/prod'
@@ -51,12 +74,35 @@ jobs:
           key: "${{ secrets.SSH_PRIVATE_KEY }}"
           script: |
             cd ~/GreepAppConfigs/greep-homepage
-            # Collect environment variables and secrets dynamically and build EARTHLY_BUILD_ARGS
-            export EARTHLY_BUILD_ARGS=$(env | grep -E 'GITHUB|AZURE|SSH|CRD|DOCKER' | \
-                awk -F= '{print $1"="$2}' | paste -sd, -)
-            # Optionally, you can add any custom variables you want to include
-            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}"
-            earthly --no-cache +setup --envs=${{ github.ref_name }}
+
+            # Collect secrets into EARTHLY_BUILD_ARGS
+            export EARTHLY_BUILD_ARGS=""
+
+            # Add secret environment variables to EARTHLY_BUILD_ARGS
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}AZURE_CLIENT_ID=${{ secrets.AZURE_CLIENT_ID }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}AZURE_CLIENT_SECRET=${{ secrets.AZURE_CLIENT_SECRET }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}AZURE_KUBERNETES_CLUSTER_NAME=${{ secrets.AZURE_KUBERNETES_CLUSTER_NAME }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}AZURE_REGISTRY_NAME=${{ secrets.AZURE_REGISTRY_NAME }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}AZURE_RESOURCE_GROUP=${{ secrets.AZURE_RESOURCE_GROUP }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}AZURE_SUBSCRIPTION_ID=${{ secrets.AZURE_SUBSCRIPTION_ID }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}AZURE_TENANT_ID=${{ secrets.AZURE_TENANT_ID }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}SSH_HOST=${{ secrets.SSH_HOST }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}SSH_PRIVATE_KEY=${{ secrets.SSH_PRIVATE_KEY }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}SSH_USER=${{ secrets.SSH_USER }},"
+
+            # Add general variables to EARTHLY_BUILD_ARGS
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}CRD_CONTROLLER_NAME=${{ variables.CRD_CONTROLLER_NAME }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}CRD_GROUP=${{ variables.CRD_GROUP }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}CRD_KIND=${{ variables.CRD_KIND }},"
+            export EARTHLY_BUILD_ARGS="${EARTHLY_BUILD_ARGS}DOCKER_REGISTRY=${{ variables.DOCKER_REGISTRY }}"
+
+            # Remove trailing comma (if any)
+            export EARTHLY_BUILD_ARGS=$(echo $EARTHLY_BUILD_ARGS | sed 's/,$//')
+
+            # Run earthly with the dynamically created EARTHLY_BUILD_ARGS
+            earthly --no-cache +setup --envs=${{ github.ref_name }} ${EARTHLY_BUILD_ARGS}
             az acr login --name ${{ secrets.AZURE_REGISTRY_NAME }}
-            earthly --push +build --envs=${{ github.ref_name }} --version=${{ github.run_number }} --service="greep-homepage" --apptype="nodejs"
-            earthly --no-cache +deploy --envs=${{ github.ref_name }} --version=${{ github.run_number }} --service="greep-homepage" --apptype="nodejs"
+            earthly --push +build --envs=${{ github.ref_name }} --version=${{ github.run_number }} --service="greep-homepage" --apptype="nodejs" ${EARTHLY_BUILD_ARGS}
+
+            # Deploy using the EARTHLY_BUILD_ARGS
+            earthly --no-cache +deploy --envs=${{ github.ref_name }} --version=${{ github.run_number }} --service="greep-homepage" --apptype="nodejs" ${EARTHLY_BUILD_ARGS}
