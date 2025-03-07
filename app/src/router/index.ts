@@ -10,11 +10,23 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: "/about",
-      name: "about",
-      component: () => import("../views/AboutView.vue"),
+      path: "/terms",
+      name: "terms",
+      component: () => import("../views/TermsView.vue"),
     },
+    {
+      path: "/:notFound",
+      component: import("../views/NotFound.vue"),
+    },
+    // {
+    //   path: "/privacy",
+    //   name: "privacy",
+    //   component: () => import("../views/PrivacyView.vue"),
+    // },
   ],
+  scrollBehavior() {
+    return { top: 0 };
+  },
 });
 
 export default router;

@@ -7,7 +7,6 @@
     <Works id="works" />
     <Feedback id="feedback" />
     <Contact id="contact" />
-    <Footer id="footer" />
   </div>
 </template>
 
@@ -18,7 +17,6 @@ import Benefits from "../Benefits/index.vue";
 import Works from "../Works/index.vue";
 import Feedback from "../Feedback/index.vue";
 import Contact from "../Contact/index.vue";
-import Footer from "../Footer/index.vue";
 import Reasons from "../Reasons/index.vue";
 </script>
 

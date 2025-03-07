@@ -6,7 +6,7 @@
         FEEDBACK
       </h3>
       <h2
-        class="text-[29px] xl:text-[56px] font-bold text-white text-center font-dela leading-[120%]"
+        class="text-[29px] xl:text-[56px] font-bold text-white text-center capitalize font-dela leading-[120%]"
       >
         The <span class="text-[#32FAC8]"> Buzz </span> from waitlisters
       </h2>
