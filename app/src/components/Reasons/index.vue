@@ -8,7 +8,7 @@
         CORE FEATURES
       </h3>
       <h2
-        class="text-[29px] xl:text-[56px] font-bold text-white text-center font-dela leading-[120%]"
+        class="text-[29px] capitalize xl:text-[56px] font-bold text-white text-center font-dela leading-[120%]"
       >
         Why choose Greep<span class="text-[#32FAC8]">Pay</span>
       </h2>
@@ -22,13 +22,20 @@
         >
           <div>
             <div class="flex items-center !pt-6 gap-4">
-              <div class="w-full h-[1px] bg-[#C4C4C6]"></div>
+              <div
+                class="w-full h-[1px] bg-[#C4C4C6] transition-all duration-300 opacity-[30%]"
+                :class="{ 'opacity-[100%]': activeIndex.includes(0) }"
+              ></div>
               <h3
-                class="!font-bold text-base text-[#C4C4C6] whitespace-nowrap mb-5"
+                class="!font-bold text-base text-[#C4C4C6] transition-all duration-300 opacity-[30%] whitespace-nowrap mb-5"
+                :class="{ 'opacity-[100%]': activeIndex.includes(0) }"
               >
                 MULTI-CURRENCY SUPPORT
               </h3>
-              <div class="w-full h-[1px] bg-[#C4C4C6]"></div>
+              <div
+                class="w-full h-[1px] bg-[#C4C4C6] transition-all duration-300 opacity-[30%]"
+                :class="{ 'opacity-[100%]': activeIndex.includes(0) }"
+              ></div>
             </div>
           </div>
 
@@ -45,7 +52,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div class="benefit-card">
                 <h4
-                  class="text-white text-[20px] mb-4 leading-[120%] font-dela"
+                  class="text-white text-[20px] sm:text-[28px] mb-4 leading-[120%] font-dela"
                 >
                   Accept <span class="text-[#32FAC8]"> African </span> Currency
                 </h4>
@@ -66,7 +73,7 @@
               </div>
               <div class="benefit-card">
                 <h4
-                  class="text-white text-[20px] mb-4 leading-[120%] font-dela"
+                  class="text-white text-[20px] sm:text-[28px] mb-4 leading-[120%] font-dela"
                 >
                   Accept <span class="text-[#32FAC8]">Stablecoin</span>
                 </h4>
@@ -79,7 +86,7 @@
                 </p>
                 <div class="h-[32px] sm:h-[96px]"></div>
                 <img
-                  src="https://res.cloudinary.com/dindu/image/upload/v1738839268/official/feat-6_muvms4.webp"
+                  src="https://res.cloudinary.com/dindu/image/upload/v1741359882/official/Frame_1618868398_sl7bcz.webp"
                   alt=""
                   class="translate-x-[32px] sm:translate-x-[64px] !ml-auto h-[141px] sm:h-[336px] object-contain"
                 />
@@ -94,14 +101,23 @@
           @mouseleave="closeItem(1)"
           class="cursor-pointer"
         >
-          <div class="flex items-center !pt-6 gap-4">
-            <div class="w-full h-[1px] bg-[#C4C4C6]"></div>
-            <h3
-              class="!font-bold text-base text-[#C4C4C6] whitespace-nowrap mb-5"
-            >
-              MULTI-PAYMENT OPTIONS
-            </h3>
-            <div class="w-full h-[1px] bg-[#C4C4C6]"></div>
+          <div>
+            <div class="flex items-center !pt-6 gap-4">
+              <div
+                class="w-full h-[1px] bg-[#C4C4C6] transition-all duration-300 opacity-[30%]"
+                :class="{ 'opacity-[100%]': activeIndex.includes(1) }"
+              ></div>
+              <h3
+                class="!font-bold text-base text-[#C4C4C6] transition-all duration-300 opacity-[30%] whitespace-nowrap mb-5"
+                :class="{ 'opacity-[100%]': activeIndex.includes(1) }"
+              >
+                MULTI-PAYMENT OPTIONS
+              </h3>
+              <div
+                class="w-full h-[1px] bg-[#C4C4C6] transition-all duration-300 opacity-[30%]"
+                :class="{ 'opacity-[100%]': activeIndex.includes(1) }"
+              ></div>
+            </div>
           </div>
           <div
             :style="{
@@ -116,30 +132,30 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div class="benefit-card">
                 <h4
-                  class="text-white text-[20px] mb-4 leading-[120%] font-dela"
+                  class="text-white text-[20px] sm:text-[28px] mb-4 leading-[120%] font-dela"
                 >
-                  Accept <span class="text-[#32FAC8]"> Transfer </span>
+                  Bank <span class="text-[#32FAC8]"> Transfer </span>
                 </h4>
 
                 <div class="h-4"></div>
                 <p
                   class="text-[16px] sm:text-[18px] text-[#C4C4C6] leading-[24px] sm:leading-[28px]"
                 >
-                  Collect payments from your customers via transfer directly on
-                  your POS terminaI.
+                  A familiar and quick means of payment; customers transfer when
+                  you show a QR code or send them a payment link.
                 </p>
                 <div class="h-[32px] sm:h-[96px]"></div>
                 <img
-                  src="https://res.cloudinary.com/dindu/image/upload/v1738839264/official/feat-2_bopmda.webp"
+                  src="https://res.cloudinary.com/dindu/image/upload/v1741359881/official/Frame_1618868397_ehmqzx.webp"
                   alt=""
                   class="translate-x-[32px] sm:translate-x-[64px] !ml-auto h-[141px] sm:h-[336px] object-contain"
                 />
               </div>
               <div class="benefit-card">
                 <h4
-                  class="text-white text-[20px] mb-4 leading-[120%] font-dela"
+                  class="text-white text-[20px] sm:text-[28px] mb-4 leading-[120%] font-dela"
                 >
-                  Accept <span class="text-[#32FAC8]">Card</span>
+                  Mobile <span class="text-[#32FAC8]">Money</span>
                 </h4>
                 <div class="h-4"></div>
                 <p
@@ -150,7 +166,7 @@
                 </p>
                 <div class="h-[32px] sm:h-[96px]"></div>
                 <img
-                  src="https://res.cloudinary.com/dindu/image/upload/v1738839265/official/feat-4_c8h4hg.webp"
+                  src="https://res.cloudinary.com/dindu/image/upload/v1741359881/official/Frame_1618868159_f9gi3h.webp"
                   alt=""
                   class="translate-x-[32px] sm:translate-x-[64px] !ml-auto h-[141px] sm:h-[336px] object-contain"
                 />
@@ -167,13 +183,20 @@
         >
           <div>
             <div class="flex items-center !pt-6 gap-4">
-              <div class="w-full h-[1px] bg-[#C4C4C6]"></div>
+              <div
+                class="w-full h-[1px] bg-[#C4C4C6] transition-all duration-300 opacity-[30%]"
+                :class="{ 'opacity-[100%]': activeIndex.includes(2) }"
+              ></div>
               <h3
-                class="!font-bold text-base text-[#C4C4C6] whitespace-nowrap mb-5"
+                class="!font-bold text-base text-[#C4C4C6] transition-all duration-300 opacity-[30%] whitespace-nowrap mb-5"
+                :class="{ 'opacity-[100%]': activeIndex.includes(2) }"
               >
                 ADVANCED WALLET FEATURES
               </h3>
-              <div class="w-full h-[1px] bg-[#C4C4C6]"></div>
+              <div
+                class="w-full h-[1px] bg-[#C4C4C6] transition-all duration-300 opacity-[30%]"
+                :class="{ 'opacity-[100%]': activeIndex.includes(2) }"
+              ></div>
             </div>
           </div>
 
@@ -192,15 +215,16 @@
                 <h4
                   class="text-white text-[20px] mb-4 leading-[120%] font-dela"
                 >
-                  Multi-Currency <span class="text-[#32FAC8]"> Wallet </span>
+                  Multi-Currency
+                  <span class="text-[#32FAC8]"> Withdrawal </span>
                 </h4>
 
                 <div class="h-4"></div>
                 <p
                   class="text-[16px] sm:text-[18px] text-[#C4C4C6] leading-[24px] sm:leading-[28px]"
                 >
-                  Keep money in your preferred currency – Stablecoin, Turkish
-                  Lira, Euros, Pounds, or USD.
+                  Withdraw money from your wallet into any currency, anytime;
+                  Crypto, African, Turkish, USD, Euro, etc.
                 </p>
                 <div class="h-[32px] sm:h-[96px]"></div>
                 <img
@@ -211,16 +235,16 @@
               </div>
               <div class="benefit-card">
                 <h4
-                  class="text-white text-[20px] mb-4 leading-[120%] font-dela"
+                  class="text-white text-[20px] sm:text-[28px] mb-4 leading-[120%] font-dela"
                 >
-                  Wallet <span class="text-[#32FAC8]">Exchange</span>
+                  Currency <span class="text-[#32FAC8]">Switching</span>
                 </h4>
                 <div class="h-4"></div>
                 <p
                   class="text-[16px] sm:text-[18px] text-[#C4C4C6] leading-[24px] sm:leading-[28px]"
                 >
-                  Shift money across different currencies in your wallet;
-                  Stablecoin, Turkish Lira, Euros, Pounds, and USD.
+                  View your wallet balance in different currencies; - Crypto,
+                  African, Turkish, USD, Euro, etc.
                 </p>
                 <div class="h-[32px] sm:h-[96px]"></div>
                 <img
@@ -240,13 +264,20 @@
           @mouseleave="closeItem(3)"
         >
           <div class="flex items-center !pt-6 gap-4">
-            <div class="w-full h-[1px] bg-[#C4C4C6]"></div>
+            <div
+              class="w-full h-[1px] bg-[#C4C4C6] transition-all duration-300 opacity-[30%]"
+              :class="{ 'opacity-[100%]': activeIndex.includes(3) }"
+            ></div>
             <h3
-              class="!font-bold text-base text-[#C4C4C6] whitespace-nowrap mb-5"
+              class="!font-bold text-base text-[#C4C4C6] transition-all duration-300 opacity-[30%] whitespace-nowrap mb-5"
+              :class="{ 'opacity-[100%]': activeIndex.includes(3) }"
             >
               LUCRATIVE REWARD PROGRAM
             </h3>
-            <div class="w-full h-[1px] bg-[#C4C4C6]"></div>
+            <div
+              class="w-full h-[1px] bg-[#C4C4C6] transition-all duration-300 opacity-[30%]"
+              :class="{ 'opacity-[100%]': activeIndex.includes(3) }"
+            ></div>
           </div>
           <div
             :style="{
@@ -261,7 +292,27 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div class="benefit-card">
                 <h4
-                  class="text-white text-[20px] mb-4 leading-[120%] font-dela"
+                  class="text-white text-[20px] sm:text-[28px] mb-4 leading-[120%] font-dela"
+                >
+                  Earn <span class="text-[#32FAC8]">GRP</span> Tokens
+                </h4>
+                <div class="h-4"></div>
+                <p
+                  class="text-[16px] sm:text-[18px] text-[#C4C4C6] leading-[24px] sm:leading-[28px]"
+                >
+                  Receive GRP - our very own crypto token, for every transaction
+                  processed on the GreepPay POS. 
+                </p>
+                <div class="h-[32px] sm:h-[96px]"></div>
+                <img
+                  src="https://res.cloudinary.com/dindu/image/upload/v1738840201/official/Greep_Token_GRP_1_plw88o.webp"
+                  alt=""
+                  class="translate-x-[32px] sm:translate-x-[64px] !ml-auto h-[141px] sm:h-[336px] object-contain"
+                />
+              </div>
+              <div class="benefit-card">
+                <h4
+                  class="text-white text-[20px] sm:text-[28px] mb-4 leading-[120%] font-dela"
                 >
                   Redeem <span class="text-[#32FAC8]"> Rewards </span>
                 </h4>
@@ -276,26 +327,6 @@
                 <div class="h-[32px] sm:h-[96px]"></div>
                 <img
                   src="https://res.cloudinary.com/dindu/image/upload/v1738840201/official/Pngtree_3d_realistic_gift_box_with_8649915sssss_1_exrbqm.webp"
-                  alt=""
-                  class="translate-x-[32px] sm:translate-x-[64px] !ml-auto h-[141px] sm:h-[336px] object-contain"
-                />
-              </div>
-              <div class="benefit-card">
-                <h4
-                  class="text-white text-[20px] mb-4 leading-[120%] font-dela"
-                >
-                  Earn <span class="text-[#32FAC8]">GRP</span> Tokens
-                </h4>
-                <div class="h-4"></div>
-                <p
-                  class="text-[16px] sm:text-[18px] text-[#C4C4C6] leading-[24px] sm:leading-[28px]"
-                >
-                  Receive GRP - our very own crypto token, for every transaction
-                  processed on the GreepPay POS. 
-                </p>
-                <div class="h-[32px] sm:h-[96px]"></div>
-                <img
-                  src="https://res.cloudinary.com/dindu/image/upload/v1738840201/official/Greep_Token_GRP_1_plw88o.webp"
                   alt=""
                   class="translate-x-[32px] sm:translate-x-[64px] !ml-auto h-[141px] sm:h-[336px] object-contain"
                 />

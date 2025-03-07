@@ -6,15 +6,21 @@
         KEY BENEFITS
       </h3>
       <h2
-        class="text-[29px] xl:text-[56px] font-bold text-white text-center font-dela leading-[120%]"
+        class="text-[29px] xl:text-[56px] capitalize font-bold text-white text-center font-dela leading-[120%]"
       >
-        More <span class="text-[#32FAC8]"> Value </span> To your business,
+        More <span class="text-[#32FAC8]"> Value </span> To your business
       </h2>
       <div class="h-[32px] sm:h-[64px]"></div>
       <div
         class="mt-[64px] w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
       >
-        <div v-for="(benefit, i) in benefits" :key="i" class="benefit-card">
+        <div
+          v-for="(benefit, i) in benefits"
+          :key="i"
+          data-aos="fade-in"
+          :data-aos-delay="`${i * 100}`"
+          class="benefit-card"
+        >
           <div>
             <h4 class="text-white text-[20px] mb-4 leading-[120%] font-dela">
               <span class="text-[#32FAC8]">{{ benefit.title }}</span>
@@ -31,7 +37,7 @@
       </div>
       <div class="h-[40px] sm:h-[64px]"></div>
       <a
-        href=""
+        href="/#contact"
         class="text-[18px] flex items-center justify-center gap-1 text-[#32FAC8] text-center"
         >Join our Waitlist
         <img

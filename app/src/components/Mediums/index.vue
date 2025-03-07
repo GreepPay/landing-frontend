@@ -15,6 +15,7 @@
       <div class="h-[32px] sm:h-[64px]"></div>
       <div class="mt-[64px] w-full grid grid-cols-1 md:grid-cols-2 gap-6">
         <div
+          data-aos="fade-up"
           class="medium-card-bg backdrop-blur-[24px] rounded-[24px] bg-[rgba(255, 255, 255, 0.05)] px-[64px] pt-[64px]"
         >
           <div>
@@ -31,29 +32,31 @@
           </div>
 
           <img
-            src="https://res.cloudinary.com/dindu/image/upload/v1738823855/official/gp-1_h0vpyv.webp"
+            src="https://res.cloudinary.com/dindu/image/upload/v1741359013/Frame_1618868389_esxsff.webp"
             alt="Hard POS Terminal device showing payment interface"
             class="xl:max-w-[333.206px] w-full h-[295px] xl:h-[328px] object-contain"
           />
         </div>
         <div
+          data-aos="fade-up"
+          data-aos-delay="100"
           class="medium-card-bg backdrop-blur-[24px] rounded-[24px] bg-[rgba(255, 255, 255, 0.05)] px-[64px] pt-[64px]"
         >
           <div>
             <h4 class="text-white text-[22px] mb-4 leading-[120%] font-dela">
-              <span class="text-[#32FAC8]">Hard</span> POS | Terminal
+              <span class="text-[#32FAC8]">Soft</span> POS | Mobile App
             </h4>
             <div class="h-4"></div>
             <p
               class="text-base xl:text-[16px] sm:text-[18px] text-[#C4C4C6] leading-[24px] sm:leading-[28px]"
             >
-              A sleek, dedicated device for businesses that need high volume or
-              in-store payment solutions.
+              Turn any smartphone into a payment terminal with our secure app.
+              Perfect for mobile businesses.
             </p>
           </div>
 
           <img
-            src="https://res.cloudinary.com/dindu/image/upload/v1738823965/official/gp-2_ux2ljv.webp"
+            src="https://res.cloudinary.com/dindu/image/upload/v1741359014/Group_5_d7mexy.webp"
             alt="Hard POS Terminal device showing payment interface"
             class="xl:max-w-[333.206px] w-full h-[295px] xl:h-[328px] object-contain xl:translate-x-[-30px]"
           />

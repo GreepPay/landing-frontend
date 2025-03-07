@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 *,
 *::before,
 *::after {
@@ -81,11 +81,89 @@ body::after {
 .slide-up-leave-to {
   transform: translateY(25px);
 }
+.blur-bg {
+  background: rgba(7, 7, 14, 0.65);
+  backdrop-filter: blur(48px);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.blur-card {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0.05) 100%
+    ),
+    rgba(7, 7, 14, 0.75);
+  backdrop-filter: blur(32px);
+}
+
+.bg-text-container {
+  padding: 80px 64px;
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+.bg-text-container h1 {
+  font-size: 64px;
+  color: #fff;
+  font-family: "Dela Gothic One", serif !important;
+  margin-bottom: 40px;
+}
+.bg-text-container h2 {
+  font-family: "Dela Gothic One", serif !important;
+  font-size: 48px;
+  line-height: 120%;
+  color: #fff;
+  margin-bottom: 40px;
+}
+.bg-text-container h3 {
+  font-family: "Dela Gothic One", serif !important;
+  font-size: 28px;
+  line-height: 120%;
+  color: #fff;
+  margin: 40px 0px;
+}
+.bg-text-container span {
+  color: #32fac8;
+}
+.bg-text-container p {
+  color: #c4c4c6;
+  font-size: 18px;
+  line-height: 28px;
+}
+
 @media (max-width: 768px) {
   body::before {
     display: none;
   }
   body::after {
     display: none;
+  }
+  .bg-text-container {
+    padding: 40px 24px;
+    margin-top: 40px;
+    gap: 40px;
+  }
+  .bg-text-container h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  .bg-text-container h2 {
+    font-family: "Dela Gothic One", serif !important;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  .bg-text-container h3 {
+    font-family: "Dela Gothic One", serif !important;
+    font-size: 18px;
+    margin: 20px 0px;
+  }
+  .bg-text-container span {
+    color: #32fac8;
+  }
+  .bg-text-container p {
+    font-size: 16px;
   }
 }

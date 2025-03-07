@@ -12,7 +12,7 @@
       </h2>
       <div class="h-[32px] sm:h-[64px]"></div>
       <div class="mt-[64px] w-full grid grid-cols-1 gap-6">
-        <div class="work-card">
+        <div data-aos="fade-in" class="work-card">
           <div class="rounded-full number-bg flex items-center justify-center">
             <h3
               class="text-white text-[22px] sm:text-[28px] mb-4 leading-[120%] font-dela p-[32px]"
@@ -35,7 +35,7 @@
             </p>
           </div>
         </div>
-        <div class="work-card">
+        <div data-aos="fade-in" data-aos-delay="100" class="work-card">
           <div class="rounded-full number-bg flex items-center justify-center">
             <h3
               class="text-white text-[22px] sm:text-[28px] mb-4 leading-[120%] font-dela p-[32px]"
@@ -58,7 +58,7 @@
             </p>
           </div>
         </div>
-        <div class="work-card">
+        <div data-aos="fade-in" data-aos-delay="150" class="work-card">
           <div class="rounded-full number-bg flex items-center justify-center">
             <h3
               class="text-white text-[22px] sm:text-[28px] mb-4 leading-[120%] font-dela p-[32px]"
@@ -82,7 +82,7 @@
             </p>
           </div>
         </div>
-        <div class="work-card">
+        <div data-aos="fade-in" data-aos-delay="100" class="work-card">
           <div class="rounded-full number-bg flex items-center justify-center">
             <h3
               class="text-white text-[22px] sm:text-[28px] mb-4 leading-[120%] font-dela p-[32px]"

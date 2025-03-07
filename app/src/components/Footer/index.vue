@@ -27,16 +27,14 @@
         </h5>
         <div class="h-[12px]"></div>
         <div class="flex flex-col gap-1">
-          <a
+          <router-link
             v-for="(link, i) in legalLinks"
             :key="i"
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
+            :to="link.link"
             class="text-[#C4C4C6] text-[16px] leading-[24px]"
           >
-            {{ link }}
-          </a>
+            {{ link.title }}
+          </router-link>
         </div>
       </div>
       <div>
@@ -57,7 +55,7 @@
           </a>
         </div>
       </div>
-      <div>
+      <!-- <div>
         <h5 class="!font-bold text-white text-[16px] uppercase leading-[24px]">
           COMPANY
         </h5>
@@ -74,7 +72,7 @@
             {{ link.text }}
           </a>
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="h-[80px]"></div>
     <div class="container max-w-[1200px] w-full">
@@ -90,10 +88,22 @@
 import { ref } from "vue";
 
 const legalLinks = ref([
-  "Terms & Conditions",
-  "Terms of Service",
-  "Data Protection",
-  "Privacy Policy",
+  {
+    title: "Terms & Conditions",
+    link: "/terms",
+  },
+  {
+    title: "Terms of Service",
+    link: "/terms",
+  },
+  {
+    title: "Data Protection",
+    link: "/terms",
+  },
+  {
+    title: "Privacy Policy",
+    link: "/terms",
+  },
 ]);
 
 const communityLinks = ref(["Greep", "Greep FX", "Greep App", "GreepPay App"]);

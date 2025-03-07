@@ -2,14 +2,19 @@
   <div
     class="!w-full flex justify-between items-center bg-topBar !px-4 !py-5 max-w-[100%]"
   >
-    <img src="../../assets/img/Greep_Logo.png" class="w-[137px] sm:w-[160px]" />
+    <router-link to="/">
+      <img
+        src="../../assets/img/Greep_Logo.png"
+        class="w-[137px] sm:w-[160px]"
+      />
+    </router-link>
 
     <div class="hidden xl:block">
       <div class="flex items-center gap-[48px]">
         <a
           v-for="(item, idx) in navItems"
           :key="idx"
-          :href="`#${item.id}`"
+          :href="`/#${item.id}`"
           class="text-[#C4C4C6] text-base cursor-pointer"
         >
           {{ item.text }}
@@ -48,7 +53,7 @@
           <a
             v-for="(item, idx) in navItems"
             :key="idx"
-            :href="`#${item.id}`"
+            :href="`/#${item.id}`"
             class="text-[#C4C4C6] block text-base cursor-pointer"
             @click="showNavigation = false"
           >
