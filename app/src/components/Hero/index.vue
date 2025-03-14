@@ -36,7 +36,7 @@
                     class="!mt-5 !sm:mt-8 flex flex-col gap-y-4 md:gap-y-0 md:flex-row gap-x-6 max-w-[204px] md:max-w-[100%]"
                 >
                     <a
-                        href="/#contact"
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSf3Y6Lr1QxtG4Pxyg7fC3lqubrS4f1Wd30wE81VMPFWtjRgug/viewform"
                         class="bg-[#32FAC8] cursor-pointer gap-x-2 flex text-center text-base items-center !py-4 !px-5 rounded-lg !font-inter !font-bold text-[#07070E]"
                     >
                         Join Our Waitlist
